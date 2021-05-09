@@ -1,0 +1,679 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- ANIMATIONS --- */
+
+@-webkit-keyframes opening {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes opening {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes scale {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.93);
+        opacity: 0.93;
+    }
+}
+@keyframes scale {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.93);
+        opacity: 0.93;
+    }
+}
+
+@-webkit-keyframes btn-scale {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.93);
+        opacity: 0.93;
+    }
+}
+@keyframes btn-scale {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.93);
+        opacity: 0.93;
+    }
+}
+
+@-webkit-keyframes slide-in-left {
+    0% {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-1000px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slide-in-right {
+    0% {
+        transform: translateX(3000px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(3000px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+html, body {
+    font-size: 62.5%;
+    --header1: calc(2rem + 1vw);
+    --header2: calc(2.75rem + 1vw);
+    --text: calc(0.65rem + 1vw);
+    --big: calc(2.4rem + 1vw);
+    --special-color: #d69656;
+    --background-color: #414141;
+    --text-color: #333333;
+    --gray-text: #525252;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+    font-family: 'Inter', sans-serif;
+    -webkit-animation: opening 0.8s ease-in-out;
+            animation: opening 0.8s ease-in-out;
+}
+h1 {
+    font-size: var(--header1);
+}
+li, button, p, a {
+    font-size: var(--text);
+}
+h2 {
+    font-size: var(--header2);
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+.burger {
+    display: none;
+}
+
+/* --- NAVIGATION --- */
+
+.main-head {
+    position: relative;
+    box-shadow: 0 1.6em 1.6em rgba(0,0,0, 0.1); /* 0 10px 10px */
+    z-index: 2;
+}
+nav {
+    width: 90%;
+    min-height: 10vh;
+    display: flex;
+    -ms-display: flex;
+    align-items: center;
+    -ms-align-items: center;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+nav h1 {
+    cursor: pointer;
+    flex: 1 1 20rem;
+    -ms-flex: 1 1 20rem;
+}
+nav h1 span {
+    color: var(--special-color);
+}
+.nav-links {
+    display: flex;
+    -ms-display: flex;
+    justify-content: space-around;
+    -ms-justify-content: space-around;
+    flex: 1 1 20rem;
+    -ms-flex: 1 1 20rem;
+}
+.nav-links li a:hover,
+.nav-links li a:focus {
+    color: var(--special-color);
+    transition: color .3s ease;
+}
+.nikon {
+    display: flex;
+    -ms-display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    max-width: 100vw;
+    width: 100%;
+    min-height: 90vh;
+    margin: 0;
+    overflow: hidden;
+}
+.nikon-introduction {
+    position: relative;
+    flex: 2 1 52rem;
+    -ms-flex: 2 1 52rem;
+    text-align: left;
+    -webkit-animation: slide-in-left 0.8s ease both;
+            animation: slide-in-left 0.8s ease both;
+    padding: 12rem 20rem 12rem 0;
+    margin-left: 5%;
+}
+.nikon-introduction p {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    line-height: 1.400em; /* 36px */
+    color: var(--gray-text);
+}
+.nikon-introduction h2 {
+    letter-spacing: 0.0428em; /* 2px */
+}
+.nikon-introduction h2 span {
+    font-weight: 200;
+    letter-spacing: 0.0642em; /* 3px */
+}
+.nikon-introduction a {
+    display: inline-block;
+    padding: 2rem 8rem;
+    color: var(--special-color);
+    border: 0.11673em solid #d69656; /* 3px */
+}
+.nikon-introduction a:hover {
+    -webkit-animation: btn-scale 0.3s ease both;
+            animation: btn-scale 0.3s ease both;
+}
+.nikon-images {
+    flex: 1 1 55rem;
+    -ms-flex: 1 1 55rem;
+    background: url(img/bg_camera.jpg) center center no-repeat;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- ABOUT lenses --- */
+
+.about {
+    display: flex;
+    -ms-display: flex;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+}
+.about-text {
+    flex: 1 1 35rem;
+    -ms-flex: 1 1 35rem;
+    justify-content: center;
+    -ms-justify-content: center;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    -webkit-animation: slide-in-right 0.8s ease both;
+            animation: slide-in-right 0.8s ease both;
+    padding: 10rem 12rem 4rem 0;
+    margin-left: 5%;
+}
+.about-text h2 {
+    letter-spacing: 0.042826em; /* 2px */
+}
+.about-text aside {
+    padding-top: 4rem;
+}
+.about-text h3 {
+    font-size: 4.48em; /* 28px/6.25px */
+    font-weight: 600;
+    padding-bottom: 1rem;
+}
+.about-image {
+    background: url(img/nikkor_z_24_70.jpg) center center no-repeat;
+    flex: 1 1 3rem;
+    -ms-flex: 1 1 3rem;
+    position: relative;
+}
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -ms-object-fit: cover;
+    -o-object-fit: cover;
+}
+
+/* --- GALLERY --- */
+
+.gallery {
+    display: grid;
+    -ms-display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    -ms-grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    -ms-grid-template-rows: repeat(2, 1fr);
+    grid-auto-flow: row;
+    -ms-grid-auto-flow: row;
+    position: relative;
+}
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+.gallery img:hover {
+    -webkit-animation: scale 0.7s ease both;
+            animation: scale 0.7s ease both;
+    cursor: pointer;
+}
+
+/* --- ENDING --- */
+
+#ending {
+    display: flex;
+    -ms-display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    max-width: 100vw;
+    width: 100%;
+    margin: 0;
+}
+.ending-image {
+    flex: 1 1 49rem;
+    -ms-flex: 1 1 49rem;
+    background: url(img/camera_9.jpg) center center no-repeat;
+    position: relative;
+    z-index: 1;
+}
+.nikon-ending {
+    flex: 2 1 50rem;
+    -ms-flex: 2 1 50rem;
+    text-align: left;
+    padding: 12rem 20rem 12rem 0;
+    margin-left: 5%;
+    -webkit-animation: slide-in-right 0.8s ease both;
+            animation: slide-in-right 0.8s ease both;
+}
+.nikon-ending h2 {
+    padding-top: 2rem;
+    letter-spacing: 0.042826em; /* 2px/46.7px */
+}
+.nikon-ending h2 span {
+    font-weight: 200;
+    letter-spacing: 0.2355em; /* 11px */
+}
+.nikon-ending p {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    line-height: 1.400778em; /* 36px */
+    color: var(--gray-text);
+}
+.nikon-ending a {
+    display: inline-block;
+    padding: 2rem 8rem;
+    color: var(--special-color);
+    border: 0.11673em solid #d69656; /* 2px */
+    margin-bottom: 4rem;
+}
+.nikon-ending a:hover {
+    -webkit-animation: btn-scale 0.3s ease both;
+            animation: btn-scale 0.3s ease both;
+}
+
+/* --- FOOTER --- */
+
+footer {
+    position: relative;
+    background: #d69656;
+    color: #fafafa;
+    z-index: 1;
+}
+.container {
+    width: 90%;
+    min-height: 10vh;
+    display: flex;
+    -ms-display: flex;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    align-items: center;
+    -ms-align-items: center;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+footer p {
+    flex: 1 1 20rem;
+    -ms-flex: 1 1 20rem;
+}
+footer ul {
+    display: flex;
+    -ms-display: flex;
+    flex: 1 1 20rem;
+    -ms-flex: 1 1 20rem;
+    align-items: center;
+    justify-content: space-around;
+    -ms-justify-content: space-around;
+}
+footer ul li a img {
+    width: 50%;
+    height: auto;
+}
+footer ul li a:hover img {
+    -webkit-animation: scale 0.7s ease both;
+            animation: scale 0.7s ease both;
+}
+
+/* --- MEDIA QUERIES --- */
+
+@media screen and (max-width: 1480px) {
+    .nikon-images {
+        background: url(img/bg_camera_m.jpg) center center no-repeat;
+        flex: 1 1 60rem;
+        -ms-flex: 1 1 60rem;
+    }
+    .nikon-introduction {
+        padding: 10rem 12rem 10rem 0;
+    }
+    .about-image {
+        background: url(img/nikkor_z_24_70_m.jpg) center center no-repeat;
+        flex: 1 1 15rem;
+        -ms-flex: 1 1 15rem;
+    }
+    .ending-image {
+        background: url(img/camera_9_m.jpg) center center no-repeat;
+        flex: 1 1 27rem;
+        -ms-flex: 1 1 27rem;
+    }
+    .nikon-ending {
+        flex: 1 1 26rem;
+        -ms-flex: 1 1 26rem;
+        padding: 10rem 12rem 10rem 0;
+    }
+}
+@media screen and (max-width: 1200px) {
+    /* --- BURGER MENU --- */
+    .burger {
+        position: relative;
+        display: block;    /* burger icon is now visible */
+        cursor: pointer;
+    }
+    .burger span {
+        display: block;
+        padding: 0.2rem 2rem;
+        margin: 0.5rem 0;
+        background: var(--gray-text);
+        transition: all 0.4s ease;
+    }
+    .nav-links {
+        background: var(--background-color);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        flex-direction: column;
+        -ms-flex-direction: column;
+        align-items: center;
+        transition: transform 0.8s ease;
+    }
+    .nav-links a {
+        color: #fafafa;
+        font-size: var(--header1);
+        text-decoration: none;
+    }
+    .nav-open {
+        transform: translateX(-100%);
+    }
+    .toggle .line1 {
+        transform: rotateZ(45deg) translateY(300%);
+        background: #fafafa;
+    }
+   .toggle .line2 {
+        opacity: 0;
+    }
+   .toggle .line3 {
+        transform: rotateZ(-45deg) translateY(-300%);
+        background: #fafafa;
+    }
+    .nikon-images {
+        flex: 1 1 50rem;
+        background: url(img/bg_camera_sm.jpg) center center no-repeat;
+    }
+    .nikon-introduction {
+        padding: 10rem 10rem 10rem 0;
+    }
+    .nikon-introduction a {
+        padding: 1.725rem 5rem;
+    }
+    /* --- ABOUT lenses --- */
+    .about-image {
+        background: url(img/nikkor_z_24_70_sm.jpg) center center no-repeat;
+        flex: 1 1 25rem;
+        -ms-flex: 1 1 25rem;
+    }
+    .about-text {
+        padding: 8rem 8rem 4rem 0;
+    }
+    .about-text h3 {
+        font-size: 4.00em;
+    }
+    /* --- GALLERY --- */
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        -ms-grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        -ms-grid-template-rows: repeat(2, 1fr);
+    }
+    .gallery img:nth-child(4),
+    .gallery img:nth-child(8) {
+        display: none;
+    }
+     .ending-image {
+        flex: 2 1 33rem;
+        -ms-flex: 2 1 33rem;
+        background: url(img/camera_9_sm.jpg) center center no-repeat;
+    }
+    .nikon-ending {
+        flex: 2 1 25rem;
+        -ms-flex: 2 1 25rem;
+        padding: 8rem 8rem 5rem 0;
+    }
+    .nikon-ending a {
+        padding: 1.725rem 5rem;
+        margin-bottom: 4rem;
+    }
+}
+@media screen and (max-width: 1100px) {
+    p {
+        font-size: 16px;
+    }
+    .nikon, #ending {
+        flex-direction: column;
+        -ms-flex-direction: column;
+    }
+    .nikon-images {
+        background: url(img/bg_camera_hr.jpg) center center no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: auto;
+        flex: 1 1 70rem;
+        -ms-flex: 1 1 70rem;
+    }
+    .nikon-introduction {
+        flex: 1 1 48rem;
+        -ms-flex: 1 1 48rem;
+        padding: 7rem 10rem 7rem 0;
+    }
+    .about-image {
+        display: none;
+    }
+    .about-text {
+        flex: 1 1 90rem;
+        -ms-flex: 1 1 90rem;
+        padding: 7rem 10rem 7rem 0;
+        margin-bottom: 0;
+    }
+    .ending-image {
+        flex: 1 1 60rem;
+        -ms-flex: 1 1 60rem;
+        background: url(img/camera_930x620.jpg) center center no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: auto;
+    }
+    .nikon-ending {
+        flex: 2 1 34rem;
+        -ms-flex: 2 1 34rem;
+        padding: 7rem 10rem 7rem 0;
+    }
+    .nikon-ending a {
+        margin-bottom: 0;
+    }
+}
+@media screen and (max-width: 960px) {
+     .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        -ms-grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        -ms-grid-template-rows: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 700px) {
+    .nikon-images {
+        background: url(img/bg_camera_hr_m.jpg) center center no-repeat;
+        flex: 1 1 45rem;
+        -ms-flex: 1 1 45rem;
+    }
+    .nikon-introduction {
+        flex: 2 1 45rem;
+        -ms-flex: 2 1 45rem;
+        padding: 6rem 8rem 6rem 0;
+    }
+    .nikon-introduction a {
+        padding: 1.50rem 3rem;
+    }
+    .about-text {
+        flex: 1 1 57rem;
+        -ms-flex: 1 1 57rem;
+        padding: 6rem 8rem 6rem 0;
+    }
+    .about-text h3 {
+        font-size: 3.00em;
+    }
+    .about-text aside {
+        padding-top: 3rem;
+    }
+    .ending-image {
+        background: url(img/camera_700.jpg) center center no-repeat;
+        flex: 1 1 46rem;
+        -ms-flex: 1 1 46rem;
+    }
+    .nikon-ending {
+        padding: 6rem 8rem 6rem 0;
+    }
+    .nikon-ending a {
+        padding: 1.50rem 3rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    p {
+        font-size: 14px;
+    }
+    .nikon-introduction {
+        flex: 2 1 45rem;
+        -ms-flex: 2 1 45rem;
+        padding: 5rem 3rem 5rem 0;
+    }
+    .nikon-introduction p {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    .about-text {
+        flex: 1 1 37rem;
+        -ms-flex: 1 1 37rem;
+        padding: 5rem 3rem 5rem 0;
+    }
+    .nikon-ending {
+        padding: 5rem 3rem 5rem 0;
+    }
+    .nikon-ending p {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+     .gallery {
+        grid-template-columns: repeat(1, 1fr);
+        -ms-grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        -ms-grid-template-rows: repeat(6, 1fr);
+    }
+    .ending-image {
+        background: url(img/camera_480.jpg) center center no-repeat;
+        flex: 1 1 32rem;
+        -ms-flex: 1 1 32rem;
+    }
+    footer ul {
+        flex: 1 1 3rem;
+        -ms-flex: 1 1 3rem;
+    }
+}
+@media screen and (max-width: 420px) {
+    .nikon-introduction {
+        flex: 2 1 33rem;
+        -ms-flex: 2 1 33rem;
+        padding: 4rem 2rem 4rem 0;
+    }
+    .nikon-images {
+        background: url(img/bg_camera_hr_sm.jpg) center center no-repeat;
+        flex: 1 1 25rem;
+        -ms-flex: 1 1 25rem;
+    }
+    .about-text {
+        flex: 1 1 37rem;
+        -ms-flex: 1 1 37rem;
+        padding: 4rem 2rem 4rem 0;
+    }
+    .nikon-ending {
+        flex: 2 1 30rem;
+        -ms-flex: 2 1 30rem;
+        padding: 4rem 2rem 4rem 0;
+    }
+}
